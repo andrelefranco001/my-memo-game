@@ -1,0 +1,302 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  max-width: 550px;
+  height: auto;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.37);
+  background-image: url("/gggrain.svg");
+}
+
+.memo-block {
+  cursor: pointer;
+  aspect-ratio: 1/1;
+}
+
+.memo-block-front, .memo-block-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.memo-block-front {
+  transition: transform 0.1s;
+}
+
+.memo-block-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+}
+
+.memo-block-flipped {
+  transform: rotateY(180deg);
+}
+
+.memo-block-back {
+  background-color: rgba(233, 233, 233, 0.9333333333);
+  transform: rotateY(180deg);
+  box-shadow: 0 2px 2px rgba(100, 100, 100, 0.368627451);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+}
+
+.memo-block-front:hover {
+  transform: scale(1.05);
+}
+
+.memo-block-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF5757;
+  box-shadow: 0 2px 2px rgba(100, 100, 100, 0.368627451);
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  outline: none;
+  transform: translate(-50%, -50%);
+  background-color: rgba(223, 223, 223, 0.7529411765);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.37);
+  z-index: 9999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(217, 217, 217, 0.5607843137);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lett-mo {
+  padding-block: 1rem;
+  color: #FF5757;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  text-shadow: 0rem 0rem 0.3rem rgba(255, 87, 87, 0.5882352941);
+}
+
+img.mymedal {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+}
+
+.mymedal.animate__animated.animate__tada {
+  -webkit-animation: tada;
+          animation: tada;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+}
+
+.modal.animate__animated.animate__fadeIn {
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(170deg, #fe8a4e 0, #ff7f50 12.5%, #ff7351 25%, #ff6654 37.5%, #ff5757 50%, #fd475b 62.5%, #fa3660 75%, #f72167 87.5%, #f3006f 100%);
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 0 0 10px 2px rgba(254, 137, 78, 0.7725490196);
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+button:hover {
+  background-image: radial-gradient(circle at 50% 120.71%, #ff5757 0, #ff5757 50%, #ff5757 100%);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 20px 4px rgba(254, 137, 78, 0.7725490196);
+}
+
+body {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  background-image: radial-gradient(circle at 50% 50%, #fbf5e8 0, #f6f2e2 7.14%, #f1efdc 14.29%, #e9ebd5 21.43%, #e1e7ce 28.57%, #d7e3c7 35.71%, #cbdec0 42.86%, #bed9b9 50%, #b0d4b3 57.14%, #a1d0b0 64.29%, #93ccae 71.43%, #84c8ae 78.57%, #76c5af 85.71%, #67c2b2 92.86%, #59bfb5 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logomybanner {
+  margin: 0 auto;
+  width: 10%;
+  height: 10%;
+  box-shadow: #0094cd;
+}
+
+.title-container img.logomy {
+  margin: 0 9px;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.total-container {
+  display: flex;
+  height: 3rem;
+  width: 9%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #FF5757;
+  border-radius: 20px;
+  box-shadow: 0 2px 2px rgba(100, 100, 100, 0.368627451);
+}
+
+.total {
+  color: whitesmoke;
+  font-size: 17px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.logot {
+  width: 30%;
+  height: 30%;
+}
+
+img.logomy {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  margin-top: 95px;
+}
+
+h3 {
+  padding-block: 1rem;
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  font-family: inter;
+  text-align: center;
+  font-family: inter;
+  font-weight: normal;
+}
+
+h2 {
+  padding-block: 1rem;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+h5 {
+  display: flex;
+  flex-wrap: nowrap;
+  color: rgba(255, 255, 255, 0.89);
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  grid-column: span 4;
+  margin-block: 0.5rem;
+  font-weight: 600;
+}
+
+.animate__animated.animate__fadeIn {
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.my-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+.app-container {
+  position: relative;
+}
+
+.app-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+}/*# sourceMappingURL=App.css.map */

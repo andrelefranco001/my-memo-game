@@ -1,0 +1,56 @@
+.memo-block {
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .memo-block-front, .memo-block-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+  }
+
+  .memo-block-front{
+    transition: transform .1s;
+  }
+  
+  .memo-block-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.2s;
+    transform-style: preserve-3d;
+  }
+  
+  .memo-block-flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .memo-block-back {
+    background-color: #e9e9e9ee;
+    transform: rotateY(180deg);
+    box-shadow: 0 2px 2px #6464645e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+  }
+
+  .memo-block-front:hover{
+    transform: scale(1.05);
+
+  }
+
+  
+  .memo-block-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF5757;
+    box-shadow: 0 2px 2px #6464645e;
+
+  }
