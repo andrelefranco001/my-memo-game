@@ -74,7 +74,9 @@ function App() {
       setselectedMemoBlock(memoBlock);
     } else if (selectedMemoBlock.image.id === memoBlock.image.id) {
       setselectedMemoBlock(null);
-      setFoundPairs(foundPairs + 1);
+      // setFoundPairs(foundPairs + 1);
+      setFoundPairs((prevFound) => prevFound + 1);
+
 
       if (foundPairs + 1 === images.length) {
         // Todas las parejas encontradas, mostrar confeti y mensaje
@@ -140,13 +142,11 @@ function App() {
 
   return (
     <div className="game-container animate__animated animate__fadeIn">
-      <div className="title-container animate__animated animate__fadeIn">
           <img
             className="logomybanner"
             src={mylogobanner}
             alt="logobanner"
           />
-      </div>
       <Board
         memoBlocks={shuffledMemoBlocks}
         animating={animating}
