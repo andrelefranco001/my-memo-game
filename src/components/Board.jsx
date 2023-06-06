@@ -15,7 +15,7 @@ function Board({ animating, handleMemoClick, memoBlocks }) {
       </>
         );
     })}
-    <h5>My Memo Game</h5>
+    <h5 className='game-name'>My Memo Game</h5>
     </main>
   );
 }

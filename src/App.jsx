@@ -152,9 +152,8 @@ function App() {
         animating={animating}
         handleMemoClick={handleMemoClick}
         />
-      <div className="total-container">
+      
         <h2 className="total">Total Games: {totalGames}</h2>
-      </div>
 
       <ReactModal
         isOpen={showModal}
