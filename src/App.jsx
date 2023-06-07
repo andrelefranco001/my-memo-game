@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Board from "./components/Board";
 import ConfettiGenerator from "confetti-js";
 import "animate.css";
@@ -8,14 +8,14 @@ import mymedal from "/medal_my2.png";
 import mylogobanner from "/my_gameslogo.png";
 
 const images = [
-  { id: 0, name: "pet1", status: "", img: "/images/01.png" },
-  { id: 1, name: "pet2", status: "", img: "/images/02.png" },
-  { id: 2, name: "pet3", status: "", img: "/images/04.png" },
-  { id: 3, name: "pet4", status: "", img: "/images/06.png" },
-  { id: 4, name: "pet5", status: "", img: "/images/09.png" },
-  { id: 5, name: "pet6", status: "", img: "/images/17.png" },
-  { id: 6, name: "pet7", status: "", img: "/images/21.png" },
-  { id: 7, name: "pet8", status: "", img: "/images/25.png" },
+  { id: 0, name: "pet1", status: "", img: "01.png" },
+  { id: 1, name: "pet2", status: "", img: "02.png" },
+  { id: 2, name: "pet3", status: "", img: "04.png" },
+  { id: 3, name: "pet4", status: "", img: "06.png" },
+  { id: 4, name: "pet5", status: "", img: "09.png" },
+  { id: 5, name: "pet6", status: "", img: "17.png" },
+  { id: 6, name: "pet7", status: "", img: "21.png" },
+  { id: 7, name: "pet8", status: "", img: "25.png" },
 ];
 
 function App() {

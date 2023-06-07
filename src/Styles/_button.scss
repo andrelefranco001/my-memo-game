@@ -1,20 +1,35 @@
-button{    
-    color: rgb(255, 255, 255);
-    background-image: linear-gradient(170deg, #fe8a4e 0, #ff7f50 12.5%, #ff7351 25%, #ff6654 37.5%, #ff5757 50%, #fd475b 62.5%, #fa3660 75%, #f72167 87.5%, #f3006f 100%);
-    border-radius: 20px;
-    cursor: pointer;
-    border: none;
-    padding: 1rem;
-    gap: 1rem;
-    box-shadow: 0 0 10px 2px #fe894ec5;
-    font-family: 'Raleway', sans-serif;
+button {
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(
+    170deg,
+    #fe8a4e 0,
+    #ff7f50 12.5%,
+    #ff7351 25%,
+    #ff6654 37.5%,
+    #ff5757 50%,
+    #fd475b 62.5%,
+    #fa3660 75%,
+    #f72167 87.5%,
+    #f3006f 100%
+  );
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 0 0 10px 2px #fe894ec5;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
+  font-size: 13px;
 }
 
 button:hover {
-    background-image: radial-gradient(circle at 50% 120.71%, #ff5757 0, #ff5757 50%, #ff5757 100%);
-    color: rgb(255, 255, 255);
-    box-shadow: 0 0 20px 4px #fe894ec5;
-
-
+  background-image: radial-gradient(
+    circle at 50% 120.71%,
+    #ff5757 0,
+    #ff5757 50%,
+    #ff5757 100%
+  );
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 20px 4px #fe894ec5;
 }
